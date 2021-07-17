@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/fileinput.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery/jquery-1.9.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/fileinput.js}"></script>
+    <script type="text/javascript" th:src="@{/js/zh.js}"></script>
+</head>
+<script>
+    window.onload = function (){
+        //var oChange = document.getElementById('chance');
+        var abtn =document.getElementsByClassName('button');
+        var adv = document.getElementsByClassName('Display');
+        for (var  i = 0;i < abtn.length;i++)
+        {
+            abtn[i].index = i;
+            abtn[i].onclick = function () {
+                adv[this.index].style.display = "block";
+            }
+        }
+    }
+    //jquery
+    $(function () {
+        $("#btn").click(function () {
+            //获取页面上所有上传文件的参数
+            var formData = new FormData(document.getElementById("form"));
+            $.ajax({
+                type: 'post',
+                url: "/uploadFile",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+            }).success(function (data) {
+                alert(data);
+            }).error(function () {
+                alert("上传失败");
+            });
+        })
+    })
+</script>
+<style>
+    .main{
+        border: 0px solid #000;
+        height: 600px;
+        width: 31.3%;
+        float: left;
+    }
+    .button{
+        border: 0px solid #000000;
+        width: 30%;
+        height: 40px;
+        background-color: aqua;
+        position: relative;
+        margin-top: 80px;
+        margin-left: 40%;
+        text-align: center;
+        line-height: 40px;
+    }
+    .Display{
+        border: 0px solid #000000;
+        position: relative;
+        width: 96%;
+        height: 400px;
+        margin-left: 2%;
+        margin-top: 70px;
+        display: none;
+    }
+    .check{
+        border: 0px solid #000000;
+        position: relative;
+        width: 98%;
+        height: 30px;
+        margin-left: 1%;
+        margin-top: 35px;
+    }
+    .left{
+        border: 0px solid #000000;
+        width: 45%;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+        line-height: 30px;
+    }
+    .center {
+        border: 0px solid #000000;
+        width: 40%;
+        height: 100%;
+        float: left;
+        margin-left: 5%;
+    }
+    .right{
+        border: 0px solid #000000;
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin-left: 30px;
+    }
+    .Please_c{
+        border: 0px solid #000000;
+        position: relative;
+        width: 60%;
+        height: 30px;
+        margin-left: 8%;
+        margin-top: 35px;
+        text-align: right;
+    }
+    #btn{
+        position: fixed;
+        width: 50px;
+        height: 25px;
+        background-color: green;
+        margin-top: 618px;
+        margin-left: 10px;
+
+    }
+</style>
+<body style="height: 100%; width: 100%;padding: 0px;margin: 0px">
+<img th:src="@{/images/1.jpeg}" style="height: 100%; width: 100%; position: fixed">
+<form id="form" enctype="multipart/form-data">
+    <div class="main">
+        <input type="button" class="button" value="LandCover">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left" style="color: #f20c00">Historic Landover Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left" style="color: #f20c00">Scenario Landcover Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario PNV Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Grassland and Shrubland Biomass Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Grassland and Shrubland Biomass Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Grassland and Shrubland Biomass Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Grassland and Shrubland Biomass Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Climate">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Historic Climate Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Climate Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Climate Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Climate Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Climate Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Climate Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Climate">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Historic Nitrogen Deposition Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Nitrogen Deposition Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Nitrogen Deposition Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Nitrogen Deposition Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Atmospheric CO2 Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Soil">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Sandy Soil</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">clay Soil</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Silt Soil</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Soil Thickness</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Organic Carbon</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Soil">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Water Capacity</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">DB 0.33 bar H20 (in g/cm3)</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">K Factor</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Drainage</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Soil Erosion/Deposition</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Carbon Erosion/Deposition</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Crop">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Historic Crop Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Crop Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Crop Harvest Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Crop Harvest Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Crop Harvest Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Crop Harvest Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Crop Yield Table Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Management">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Historic Manure Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Manure Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Tillage Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Tillage Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Fertilizer Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Fertilizer Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Irrigation Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Forest">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Forest Biomass</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Forest Stand Age</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Forest Stand Age Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Forest">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Tabluar Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Mortality Tables</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Mortality Tables</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Forest">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">FIA Thinning Tables</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Thinning Tables</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Thinning Tables</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Timber Product Output Tabular Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Timber Product Output Tabular Data</div>
+                <div class="center">
+                    <input type="text" name="forTimberProductOutputYear" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="AdminUnit">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">FIPS Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">FIA Units Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Topography">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Slope Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Elevation Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Compound Topographic Index Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Remote">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">GPP Total</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">GPP Averag</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">NPP</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">LIA</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Disturbance">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">FireSeverity Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Historic Fire Severity Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario Fire Severity Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="InitialConditions">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Initial Conditions Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Initial Conditions Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Initial Conditions Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Initial Conditions Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Initial Conditions Type Data</div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Model and Scenario select">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">Model</div>
+                <div class="center">
+                    <input type="text" name="model" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">AutoCalibration</div>
+                <div class="center">
+                    <input type="text" name="autoCalibration" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">Scenario</div>
+                <div class="center">
+                    <input type="text" name="scenario" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Operating parameters setting">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">GridSizeX</div>
+                <div class="center">
+                    <input type="text" name="gridSizeX" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">GridSizeY</div>
+                <div class="center">
+                    <input type="text" name="gridSizeY" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">XStartCoord</div>
+                <div class="center">
+                    <input type="text" name="xStartCoord" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">YStartCoord</div>
+                <div class="center">
+                    <input type="text" name="yStartCoord" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">XWindowSize</div>
+                <div class="center">
+                    <input type="text" name="xWindowSize" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">YWindowSize</div>
+                <div class="center">
+                    <input type="text" name="yWindowSize" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Operating parameters setting">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">XWindowStart</div>
+                <div class="center">
+                    <input type="text" name="xWindowStart" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">YWindowStart</div>
+                <div class="center">
+                    <input type="text" name="yWindowStart" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">XWindowEnd</div>
+                <div class="center">
+                    <input type="text" name="xWindowEnd" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">YWindowEnd</div>
+                <div class="center">
+                    <input type="text" name="yWindowEnd" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">RowScale</div>
+                <div class="center">
+                    <input type="text" name="rowScale" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">ColScale</div>
+                <div class="center">
+                    <input type="text" name="colScale" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Simulation time setting">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">ScenarioStartYear</div>
+                <div class="center">
+                    <input type="text" name="scenarioStartYear" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">ScenarioEndYear</div>
+                <div class="center">
+                    <input type="text" name="scenarioEndYear" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">HistoricStartYear</div>
+                <div class="center">
+                    <input type="text" name="historicStartYear" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">HistoricEndYear</div>
+                <div class="center">
+                    <input type="text" name="historicEndYear" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">CombineYears</div>
+                <div class="center">
+                    <input type="text" name="combineYears" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Resolution setting">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">BasePixelSize</div>
+                <div class="center">
+                    <input type="text" name="basePixelSize" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="Output">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">TimeInterval</div>
+                <div class="center">
+                    <input type="text" name="timeInterval" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" value="提交" id="btn" src="www.baidu.com"/>
+</form>
+
+</body>
+</html>

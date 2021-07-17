@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/fileinput.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery/jquery-1.9.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/fileinput.js}"></script>
+    <script type="text/javascript" th:src="@{/js/zh.js}"></script>
+</head>
+<script>
+    window.onload = function (){
+        //var oChange = document.getElementById('chance');
+        var abtn =document.getElementsByClassName('button');
+        var adv = document.getElementsByClassName('Display');
+        for (var  i = 0;i < abtn.length;i++)
+        {
+            abtn[i].index = i;
+            abtn[i].onclick = function () {
+                adv[this.index].style.display = "block";
+                //adv[this.index].style.height = 400px
+                //alert('123')
+                /*for (var  i = 0;i < abtn.length;i++)
+                {
+                    //abtn[i].className = ' ';
+
+                }*/
+                //this.className = 'active';
+                //adv[this.index].style.display = 'block';
+            }
+        }
+    }
+    //jquery
+    $(function () {
+        $("#btn").click(function () {
+            //获取页面上所有上传文件的参数
+            var formData = new FormData(document.getElementById("form"));
+            $.ajax({
+                type: 'post',
+                url: "/uploadFile",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+            }).success(function (data) {
+                alert(data);
+            }).error(function () {
+                alert("上传失败");
+            });
+        })
+    })
+</script>
+<style>
+    .main{
+        border: 1px solid #000;
+        height: 600px;
+        width: 31.3%;
+        float: left;
+    }
+    .button{
+        border: 0px solid #000000;
+        width: 30%;
+        height: 40px;
+        background-color: aqua;
+        position: relative;
+        margin-top: 80px;
+        margin-left: 40%;
+        text-align: center;
+        line-height: 40px;
+    }
+    .Display{
+        border: 0px solid #000000;
+        position: relative;
+        width: 96%;
+        height: 400px;
+        margin-left: 2%;
+        margin-top: 70px;
+        display: none;
+    }
+    .check{
+        border: 0px solid #000000;
+        position: relative;
+        width: 98%;
+        height: 30px;
+        margin-left: 1%;
+        margin-top: 35px;
+    }
+    .left{
+        border: 0px solid #000000;
+        width: 45%;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+        line-height: 30px;
+    }
+    .center {
+        border: 0px solid #000000;
+        width: 40%;
+        height: 100%;
+        float: left;
+        margin-left: 5%;
+    }
+    .right{
+        border: 1px solid #000000;
+        float: right;
+        width: 30px;
+        height: 30px;
+    }
+    .Please_c{
+        border: 0px solid #000000;
+        position: relative;
+        width: 98%;
+        height: 30px;
+        margin-left: 1%;
+        margin-top: 35px;
+        text-align: right;
+    }
+    #btn{
+        position: fixed;
+        width: 50px;
+        height: 25px;
+        background-color: green;
+        margin-top: 618px;
+        margin-left: 10px;
+
+    }
+</style>
+<body style="height: 100%; width: 100%;padding: 0px;margin: 0px">
+<img th:src="@{/images/1.jpeg}" style="height: 100%; width: 100%; position: fixed">
+<form id="form" enctype="multipart/form-data">
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left" style="color: #f20c00">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text"  required = "required" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left" style="color: #f20c00">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" required = "required" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <input type="button" class="button" value="test">
+        <div class="Display">
+            <div class="Please_c">(请添加文件)</div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 98%; height: 60%;margin-top: 2%; position: relative;">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+            <div class="check">
+                <div class="left">jadfadsfadsfadsfadsfadfjaidfjdijifjdfaoddfadfasdf</div>
+                <div class="center">
+                    <input type="text" name="FileName" style="overflow: hidden; width: 38%; height: 60%;margin-top: 2%; position: relative; float: right">
+                </div>
+                <div class="right">
+                    <input type="file" name = "file"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="button" value="提交" id="btn">
+</form>
+
+</body>
+</html>

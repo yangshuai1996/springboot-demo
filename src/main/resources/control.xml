@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gems>
+<!--GEMS Control File-->
+<!--
+
+-->
+<ModelConfig>
+<!--Supported Software Version of this file-->
+<VersionSW>2.0.0</VersionSW>
+<!--Model to run: 0-Century, 1-EDCM, 2-PBN, 3-EnFK_EDCM-->
+<Model>1</Model>
+<AutoCalibration>0</AutoCalibration>
+<!--Scenario to run: 0-a1b, 1-a2, 2-b1, 3-b2-->
+<Scenario>0</Scenario>
+<GridSizeX>1846</GridSizeX>
+<GridSizeY>1161</GridSizeY>
+<XStartCoord>-2355078</XStartCoord>
+<YStartCoord>3172168</YStartCoord>
+<XWindowSize>200</XWindowSize>
+<YWindowSize>200</YWindowSize>
+<XWindowStart>0</XWindowStart>
+<YWindowStart>0</YWindowStart>
+<XWindowEnd>1845</XWindowEnd>
+<YWindowEnd>1160</YWindowEnd>
+<RowScale>10</RowScale>
+<ColScale>10</ColScale>
+<ScenarioStartYear>2006</ScenarioStartYear>
+<ScenarioEndYear>2050</ScenarioEndYear>
+<HistoricStartYear>1992</HistoricStartYear>
+<HistoricEndYear>2005</HistoricEndYear>
+<CombineYears>2</CombineYears>
+<BasePixelSize>2500</BasePixelSize>
+</ModelConfig>
+<LandCover>
+<!--Landcover Data Sets-->
+<!--Historic Landover Data-->
+<LCFlag>1</LCFlag>
+<LCFile>landcover/conus2500m/landcover_lulc_conus2500m_1992_2005_grid_dv01_sv01.nc4</LCFile>
+<!--Scenario Landcover Data-->
+<LC_Scenario_Flag>1</LC_Scenario_Flag>
+<LC_Scenario_File>landcover/conus2500m/landcover_lulc_conus2500m_a1b_2006_2050_grid_dv01_sv01.nc4</LC_Scenario_File>
+<!--Scenario PNV Data-->
+<PNV_Scenario_Flag>0</PNV_Scenario_Flag>
+<PNV_Scenario_File/>
+<!--Grassland and Shrubland Biomass Data-->
+<LC_grass_agblive_Flag>1</LC_grass_agblive_Flag>
+<LC_grass_agblive_File>landcover/conus2500m/landcover_grass_agblive_conus2500m_grid_dv01_sv01.nc4</LC_grass_agblive_File>
+<LC_grass_bgblive_Flag>1</LC_grass_bgblive_Flag>
+<LC_grass_bgblive_File>landcover/conus2500m/landcover_grass_bgblive_conus2500m_grid_dv01_sv01.nc4</LC_grass_bgblive_File>
+<LC_shrub_agb_Flag>1</LC_shrub_agb_Flag>
+<LC_shrub_agb_File>landcover/conus2500m/landcover_shrub_agb_conus2500m_grid_dv01_sv01.nc4</LC_shrub_agb_File>
+<LC_shrub_bgb_Flag>1</LC_shrub_bgb_Flag>
+<LC_shrub_bgb_File>landcover/conus2500m/landcover_shrub_bgb_conus2500m_grid_dv01_sv01.nc4</LC_shrub_bgb_File>
+</LandCover>
+<Climate>
+<!--Climate Data Type-->
+<!--Historic Climate Data-->
+<TminFlag>1</TminFlag>
+<TminFile>climate/conus2500m/climate_tmin_conus2500m_1970_2010_grid_dv01_sv01.nc4</TminFile>
+<TmaxFlag>1</TmaxFlag>
+<TmaxFile>climate/conus2500m/climate_tmax_conus2500m_1970_2010_grid_dv01_sv01.nc4</TmaxFile>
+<PrecipFlag>1</PrecipFlag>
+<PrecipFile>climate/conus2500m/climate_ppt_conus2500m_1970_2010_grid_dv01_sv01.nc4</PrecipFile>
+<!--Scenario Climate Data-->
+<Tmax_Scenario_Flag>1</Tmax_Scenario_Flag>
+<Tmax_Scenario_File>climate/conus2500m/climate_tmax_conus2500m_cgcm_a1b_2001_2100_grid_dv02_sv01.nc4</Tmax_Scenario_File>
+<Tmin_Scenario_Flag>1</Tmin_Scenario_Flag>
+<Tmin_Scenario_File>climate/conus2500m/climate_tmin_conus2500m_cgcm_a1b_2001_2100_grid_dv02_sv01.nc4</Tmin_Scenario_File>
+<Precip_Scenario_Flag>1</Precip_Scenario_Flag>
+<Precip_Scenario_File>climate/conus2500m/climate_ppt_conus2500m_cgcm_a1b_2001_2100_grid_dv02_sv01.nc4</Precip_Scenario_File>
+<!--Historic Nitrogen Deposition Data-->
+<NDepNHxFlag>1</NDepNHxFlag>
+<NDepNHxFile>climate/conus2500m/climate_nhx_conus2500m_1860_2050_grid_dv01_sv01.nc4</NDepNHxFile>
+<NDepNOyFlag>1</NDepNOyFlag>
+<NDepNOyFile>climate/conus2500m/climate_noy_conus2500m_1860_2050_grid_dv01_sv01.nc4</NDepNOyFile>
+<!--Scenario Nitrogen Deposition Data-->
+<Nhx_Scenario_Flag>1</Nhx_Scenario_Flag>
+<Nhx_Scenario_File>climate/conus2500m/climate_nhx_conus2500m_a1b_2006_2050_grid_dv01_sv01.nc4</Nhx_Scenario_File>
+<Noy_Scenario_Flag>1</Noy_Scenario_Flag>
+<Noy_Scenario_File>climate/conus2500m/climate_noy_conus2500m_a1b_2006_2050_grid_dv01_sv01.nc4</Noy_Scenario_File>
+<!--Historic Atmospheric CO2 Data-->
+<AtmosphericCO2Flag>1</AtmosphericCO2Flag>
+<AtmosphericCO2File>climate/conus2500m/climate_co2_conus2500m_2002_2011_tab_dv01_sv01.nc4</AtmosphericCO2File>
+</Climate>
+<Soil>
+<!--Soil Data Sets-->
+<!--Sandy Soil-->
+<SandFlag>1</SandFlag>
+<SandFile>soil/conus2500m/soil_sand_conus2500m_grid_dv01_sv01.nc4</SandFile>
+<!-- Soil-->
+<ClayFlag>1</ClayFlag>
+<ClayFile>soil/conus2500m/soil_clay_conus2500m_grid_dv01_sv01.nc4</ClayFile>
+<!--Silt Soil-->
+<SiltFlag>1</SiltFlag>
+<SiltFile>soil/conus2500m/soil_silt_conus2500m_grid_dv01_sv01.nc4</SiltFile>
+<!--Soil Thickness-->
+<ThicknessFlag>1</ThicknessFlag>
+<ThicknessFile>soil/conus2500m/soil_thick_conus2500m_grid_dv01_sv01.nc4</ThicknessFile>
+<!--Organic Carbon-->
+<OrgCarbonFlag>1</OrgCarbonFlag>
+<OrgCarbonFile>soil/conus2500m/soil_soc_conus2500m_grid_dv01_sv01.nc4</OrgCarbonFile>
+<!--Water Capacity-->
+<WaterCapacityFlag>1</WaterCapacityFlag>
+<WaterCapacityFile>soil/conus2500m/soil_awc_conus2500m_grid_dv01_sv01.nc4</WaterCapacityFile>
+<!--DB 0.33 bar H20 (in g/cm3)-->
+<db3barFlag>1</db3barFlag>
+<db3barFile>soil/conus2500m/soil_dbthirdbar_conus2500m_grid_dv01_sv01.nc4</db3barFile>
+<!--K Factor-->
+<KFactorFlag>0</KFactorFlag>
+<KFactorFile/>
+<!--Drainage-->
+<DrainageFlag>1</DrainageFlag>
+<DrainageFile>soil/conus2500m/soil_drainage_conus2500m_grid_dv02_sv01.nc4</DrainageFile>
+<!--Soil Erosion/Deposition-->
+<SoilErosionDepFlag>0</SoilErosionDepFlag>
+<SoilErosionDepFile/>
+<!--Carbon Erosion/Deposition-->
+<CErosionDepFlag>0</CErosionDepFlag>
+<CErosionDepFile/>
+</Soil>
+<Crop>
+<!--Crop Data Sets-->
+<!--Historic Crop Type Data-->
+<CropTypeFlag>1</CropTypeFlag>
+<CropTypeFile>management/conus2500m/mgmt_crop_type_conus2500m_1992_2005_grid_dv05_sv01.nc4</CropTypeFile>
+<!--Scenario Crop Type Data-->
+<CropType_Scenario_Flag>1</CropType_Scenario_Flag>
+<CropType_Scenario_File>management/conus2500m/mgmt_crop_type_conus2500m_a1b_2006_2050_grid_dv05_sv01.nc4</CropType_Scenario_File>
+<!--Historic Crop Harvest Data-->
+<CropHarvestFlag>0</CropHarvestFlag>
+<CropHarvestFile/>
+<!--Scenario Crop Harvest Data-->
+<CropHarvest_Scenario_Flag>0</CropHarvest_Scenario_Flag>
+<CropHarvest_Scenario_File/>
+<!--Historic Cover Crop Data-->
+<CoverCropFlag>0</CoverCropFlag>
+<CoverCropFile/>
+<!--Scenario Cover Crop Data-->
+<CoverCrop_Scenario_Flag>0</CoverCrop_Scenario_Flag>
+<CoverCrop_Scenario_File/>
+<!--Crop Yield Table Data-->
+<CropYieldTableFile/>
+</Crop>
+<Management>
+<!--Management Sets-->
+<!--Historic Manure Data-->
+<ManureFlag>1</ManureFlag>
+<ManureFile>management/conus2500m/mgmt_manure_conus2500m_1992_2005_grid_dv05_sv01.nc4</ManureFile>
+<!--Scenario Manure Data-->
+<Manure_Scenario_Flag>1</Manure_Scenario_Flag>
+<Manure_Scenario_File>management/conus2500m/mgmt_manure_conus2500m_a1b_2006_2050_grid_dv05_sv01.nc4</Manure_Scenario_File>
+<!--Historic Tillage Data-->
+<TillageFlag>1</TillageFlag>
+<TillageFile>management/conus2500m/mgmt_tillage_conus2500m_1992_2005_grid_dv05_sv01.nc4</TillageFile>
+<!--Scenario Tillage Data-->
+<Tillage_Scenario_Flag>1</Tillage_Scenario_Flag>
+<Tillage_Scenario_File>management/conus2500m/mgmt_tillage_conus2500m_a1b_2006_2050_grid_dv05_sv01.nc4</Tillage_Scenario_File>
+<!--Historic Fertilizer Data-->
+<FertilizerFlag>1</FertilizerFlag>
+<FertilizerFile>management/conus2500m/mgmt_fertilizer_conus2500m_1992_2005_grid_dv05_sv01.nc4</FertilizerFile>
+<!--Scenario Fertilizer Data-->
+<Fertilizer_Scenario_Flag>1</Fertilizer_Scenario_Flag>
+<Fertilizer_Scenario_File>management/conus2500m/mgmt_fertilizer_conus2500m_a1b_2006_2050_grid_dv05_sv01.nc4</Fertilizer_Scenario_File>
+<!--Irrigation Data-->
+<IrrigationFlag>1</IrrigationFlag>
+<IrrigationFile>management/conus2500m/mgmt_irrigation_conus2500m_grid_dv01_sv01.nc4</IrrigationFile>
+</Management>
+<Forest>
+<!--Forest Data Sets-->
+<!--Forest Biomass-->
+<ForBioMassFlag>1</ForBioMassFlag>
+<ForBioMassFile>forest/conus2500m/forest_biomass_conus2500m_grid_dv01_sv01.nc4</ForBioMassFile>
+<!--Historic Forest Stand Age-->
+<ForStandageFlag>1</ForStandageFlag>
+<ForStandageFile>forest/conus2500m/forest_standage_conus2500m_1992_2005_grid_dv01_sv01.nc4</ForStandageFile>
+<!--Scenario Forest Stand Age Data-->
+<ForStandage_Scenario_Flag>1</ForStandage_Scenario_Flag>
+<ForStandage_Scenario_File>forest/conus2500m/forest_standage_conus2500m_a1b_2006_2050_grid_dv01_sv01.nc4</ForStandage_Scenario_File>
+<!--FIA Tabluar Data-->
+<ForFiaDownDead>forest/conus/forest_dwnd_conus_tab_dv03_sv01.nc4</ForFiaDownDead>
+<ForFiaLitter>forest/conus/forest_litt_conus_tab_dv03_sv01.nc4</ForFiaLitter>
+<ForFiaLivetreeAboveGround>forest/conus/forest_lvag_conus_tab_dv03_sv01.nc4</ForFiaLivetreeAboveGround>
+<ForFiaLivetreeBelowGround>forest/conus/forest_lvbg_conus_tab_dv03_sv01.nc4</ForFiaLivetreeBelowGround>
+<ForFiaSoilOrganicCarbon>forest/conus/forest_soc_conus_tab_dv03_sv01.nc4</ForFiaSoilOrganicCarbon>
+<ForFiaStandingDead>forest/conus/forest_stnd_conus_tab_dv03_sv01.nc4</ForFiaStandingDead>
+<ForFiaUnderstoryAboveGround>forest/conus/forest_usag_conus_tab_dv03_sv01.nc4</ForFiaUnderstoryAboveGround>
+<ForFiaUnderstoryBelowGround>forest/conus/forest_usbg_conus_tab_dv03_sv01.nc4</ForFiaUnderstoryBelowGround>
+<!--FIA Mortality Tables-->
+<ForFiaMortalityAge>forest/conus/forest_mortality_age_conus_tab_dv01_sv01.nc4</ForFiaMortalityAge>
+<ForFiaMortalityRatio>forest/conus/forest_mortality_ratio_conus_tab_dv02_sv01.nc4</ForFiaMortalityRatio>
+<!--FIA Thinning Tables-->
+<ForFiaThinningAge>forest/conus/forest_thinning_age_conus_tab_dv01_sv01.nc4</ForFiaThinningAge>
+<ForFiaThinningIntensity>forest/conus/forest_thinning_intensity_conus_tab_dv01_sv01.nc4</ForFiaThinningIntensity>
+<ForFiaThinningRatio>forest/conus/forest_thinning_ratio_conus_tab_dv02_sv01.nc4</ForFiaThinningRatio>
+<!--Timber Product Output Tabular Data-->
+<ForTimberProductOutput>forest/conus/forest_tpo_conus_1997_2002_2007_tab_dv01_sv01.nc4</ForTimberProductOutput>
+<ForTimberProductOutputYear>2002</ForTimberProductOutputYear>
+</Forest>
+<AdminUnit>
+<!--Administrative Unit Type Data-->
+<!--FIPS Data-->
+<FipsCodeFlag>1</FipsCodeFlag>
+<FipsCodeFile>reference/conus2500m/reference_fips_conus2500m_grid_dv01_sv01.nc4</FipsCodeFile>
+<!--FIA Units Data-->
+<FiaUnitFlag>1</FiaUnitFlag>
+<FiaUnitFile>reference/conus2500m/reference_fia_units_conus2500m_grid_dv01_sv01.nc4</FiaUnitFile>
+</AdminUnit>
+<Elevation>
+<!--Elevation Data Sets-->
+<!--Slope Data-->
+<SlopeFlag>0</SlopeFlag>
+<SlopeFile/>
+<!--Elevation Data-->
+<DEMFlag>0</DEMFlag>
+<DEMFile/>
+<!--Compound Topographic Index Data-->
+<CTIFlag>0</CTIFlag>
+<CTIFile/>
+</Elevation>
+<RemoteSensed>
+<!--Remotely Sensed Data Sets-->
+<!--GPP Total-->
+<GPP_TotalFlag>0</GPP_TotalFlag>
+<GPP_TotalFile/>
+<!--GPP Average-->
+<GPP_AvgFlag>0</GPP_AvgFlag>
+<GPP_AvgFile/>
+<!--NPP-->
+<NPPFlag>0</NPPFlag>
+<NPPFile/>
+<!--LIA-->
+<LAIFlag>0</LAIFlag>
+<LAIFile/>
+</RemoteSensed>
+<Fire>
+<!--FireSeverity Type Data-->
+<!--Historic Fire Severity Data-->
+<FireSeverityFlag>1</FireSeverityFlag>
+<FireSeverityFile>disturbance/conus2500m/disturb_fire1_sev_conus2500m_1984_2008_grid_dv03_sv01.nc4</FireSeverityFile>
+<!--Scenario Fire Severity Data-->
+<FireSeverity_Scenario_Flag>1</FireSeverity_Scenario_Flag>
+<FireSeverity_Scenario_File>disturbance/conus2500m/disturb_fire1_sev_conus2500m_cgcm_a1b_2001_2050_grid_dv02_sv01.nc4</FireSeverity_Scenario_File>
+</Fire>
+<InitialConditions>
+<!--Initial Conditions Type Data-->
+<InitLitterBiomassFlag>1</InitLitterBiomassFlag>
+<InitLitterBiomassFile>initial/conus2500m/initial_conus2500m_litterag_pbn_1992_grid_dv02_sv01.nc4</InitLitterBiomassFile>
+<InitAGLiveBiomassFlag>1</InitAGLiveBiomassFlag>
+<InitAGLiveBiomassFile>initial/conus2500m/initial_conus2500m_livag_pbn_1992_grid_dv02_sv01.nc4</InitAGLiveBiomassFile>
+<InitBGLiveBiomassFlag>1</InitBGLiveBiomassFlag>
+<InitBGLiveBiomassFile>initial/conus2500m/initial_conus2500m_livbg_pbn_1992_grid_dv02_sv01.nc4</InitBGLiveBiomassFile>
+<InitDeadWoodBiomassFlag>1</InitDeadWoodBiomassFlag>
+<InitDeadWoodBiomassFile>initial/conus2500m/initial_conus2500m_wood2c_pbn_1992_grid_dv02_sv01.nc4</InitDeadWoodBiomassFile>
+<InitStandingWoodBiomassFlag>1</InitStandingWoodBiomassFlag>
+<InitStandingWoodBiomassFile>initial/conus2500m/initial_conus2500m_woodStand_pbn_1992_grid_dv02_sv01.nc4</InitStandingWoodBiomassFile>
+</InitialConditions>
+<Output>
+<!--Output Variable Information-->
+<!--Output time interval: 0=Yearly, 1=Monthly-->
+<TimeInterval>0</TimeInterval>
+<Definition>
+<!--Output File: Total carbon related to grain production-->
+<FileName>cgrain_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>cgrain</VarName>
+<VarLongName>grain_C</VarLongName>
+<Units>g C/m2/yr</Units>
+<Title>Total carbon related to grain production</Title>
+</Definition>
+<Definition>
+<!--Output File: Total living biomass-->
+<FileName>frstc_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>frstc</VarName>
+<VarLongName>total_living_biomass</VarLongName>
+<Units>g C/m2</Units>
+<Title>Total living biomass</Title>
+</Definition>
+<Definition>
+<!--Output File: Total ecosystem carbon-->
+<FileName>fsysc_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>fsysc</VarName>
+<VarLongName>total_C</VarLongName>
+<Units>g C/m2</Units>
+<Title>Total ecosystem carbon</Title>
+</Definition>
+<Definition>
+<!--Output File: Net carbon production by ag-->
+<FileName>ncproda_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>ncproda</VarName>
+<VarLongName>net_C_ag_production</VarLongName>
+<Units>g C/m2/yr</Units>
+<Title>Net carbon production by ag</Title>
+</Definition>
+<Definition>
+<!--Output File: total SOC in soil profile-->
+<FileName>profSOC_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>profSOC</VarName>
+<VarLongName>profSOC</VarLongName>
+<Units>gC/m2</Units>
+<Title>total SOC in soil profile</Title>
+</Definition>
+<Definition>
+<!--Output File: Total soil carbon excluding litter and structural carbon-->
+<FileName>somsc_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>somsc</VarName>
+<VarLongName>total_soil_C_excluding_litter_structural</VarLongName>
+<Units>g C/m2</Units>
+<Title>Total soil carbon excluding litter and structural carbon</Title>
+</Definition>
+<Definition>
+<!--Output File: Total soil carbon including belowground structural and metabolic carbon-->
+<FileName>somtc_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>somtc</VarName>
+<VarLongName>total_soil_C</VarLongName>
+<Units>g C/m2</Units>
+<Title>Total soil carbon including belowground structural and metabolic carbon</Title>
+</Definition>
+<Definition>
+<!--Output File: Carbon removal by tree cutting-->
+<FileName>tcrem_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>tcrem</VarName>
+<VarLongName>tree_cutting_removed_C</VarLongName>
+<Units>g C/m2/yr</Units>
+<Title>Carbon removal by tree cutting</Title>
+</Definition>
+<Definition>
+<!--Output File: Carbon in wood2 (dead large wood) component of forest system-->
+<FileName>WOOD2C_cgcm_conus2500m_a1b.nc4</FileName>
+<VarName>WOOD2C</VarName>
+<VarLongName>down_dead_large_wood_C</VarLongName>
+<Units>g C/m2</Units>
+<Title>Carbon in wood2 (dead large wood) component of forest system</Title>
+</Definition>
+</Output>
+</gems>
