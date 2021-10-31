@@ -11,5 +11,7 @@ public class ObserverTest {
         Observer observer = new RealObject();
         subject.attache(observer);
         subject.notifyChanged();
+
+        System.out.println("这是一行需要回滚的操作");
     }
 }
