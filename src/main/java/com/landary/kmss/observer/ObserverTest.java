@@ -13,5 +13,7 @@ public class ObserverTest {
         subject.notifyChanged();
 
         System.out.println("这是一行需要回滚的操作");
+
+        System.out.println("第二次提交代码");
     }
 }
